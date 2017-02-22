@@ -23,7 +23,7 @@ function(session, input, output) {
           xx <- data.frame(values = foo)
           }
         else {
-          if ((length(grep(pattern = ".=\\s*[0-9]+$", input$caption)))) {
+          if ((length(grep(pattern = ".\\s*=\\s*[0-9]+$", input$caption)))) {
             foo <- eval(parse(text = paste("sim_values(n = input$sampleSize,dist = input$dist,",input$caption,")")))
             xx <- data.frame(values = foo)
           }
@@ -34,6 +34,8 @@ function(session, input, output) {
     #   output$trendPlot <- renderPlotly(ggplot() + ggtitle("Invalid Additional Input. Please correct this."))
     # }
     # else {
+    aa <<- input$caption
+    print(dim(xx))
     m <- ggplot(xx, aes(x=values)) + geom_histogram(aes(fill = ..count..), bins = 30)
 
     ggplotly(m)

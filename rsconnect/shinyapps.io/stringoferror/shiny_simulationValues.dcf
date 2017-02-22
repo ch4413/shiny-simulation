@@ -2,6 +2,6 @@ name: shiny_simulationValues
 account: stringoferror
 server: shinyapps.io
 appId: 158582
-bundleId: 720548
+bundleId: 720843
 url: https://stringoferror.shinyapps.io/shiny_simulationValues/
-when: 1487774355.7237
+when: 1487785730.723
